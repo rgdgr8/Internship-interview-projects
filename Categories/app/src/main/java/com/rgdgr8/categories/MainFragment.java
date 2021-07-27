@@ -5,8 +5,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -33,7 +35,7 @@ public class MainFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        adapter = new MainAdapter(Categories.getInstance().getCategoriesList());
+        adapter = new MainAdapter(Categories.getInstance(getActivity()).getCategoriesList());
         recyclerView.setAdapter(adapter);
         recyclerView.addOnScrollListener(new MyScrollListener(greetingLayout));
 
@@ -108,19 +110,26 @@ public class MainFragment extends Fragment {
     }
 
     private class CategoryHolder extends RecyclerView.ViewHolder {
+        private static final String TAG = "Holder";
         private final TextView subjectTv;
         private final TextView courseTv;
+        private final ImageView backgroundImage;
 
         public CategoryHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
             subjectTv = itemView.findViewById(R.id.subject_tv);
             courseTv = itemView.findViewById(R.id.course_tv);
+            backgroundImage = itemView.findViewById(R.id.background);
         }
 
         public void bind(Category category) {
             subjectTv.setText(category.getSubject());
-            courseTv.setText(category.getCourses());
+            courseTv.setText(category.getCourses() + " courses");
+            if (category.getCover() != null) {
+                Log.d(TAG, "bind: " + category.getCover());
+                backgroundImage.setImageDrawable(category.getCover());
+            }
         }
     }
 

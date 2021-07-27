@@ -6,32 +6,42 @@
     android:layout_margin="10dp"
     app:cardCornerRadius="15dp">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:src="@drawable/default_item_background"
+        android:scaleType="fitXY"
+        android:contentDescription="Cover" />
+
+    <LinearLayout
+        android:id="@+id/item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:paddingHorizontal="10dp"
+        android:gravity="end">
 
         <TextView
             android:id="@+id/subject_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:text="Subject"
             android:fontFamily="sans-serif-light"
-            android:padding="10dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"/>
 
         <TextView
             android:id="@+id/course_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:fontFamily="sans-serif-light"
-            android:padding="10dp"
             android:text="courses"
-            android:textSize="15sp" />
+            android:textSize="12sp"
+            android:background="@android:color/transparent"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

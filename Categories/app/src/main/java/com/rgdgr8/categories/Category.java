@@ -1,18 +1,30 @@
 package com.rgdgr8.categories;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+
 public class Category {
-    private String subject;
-    private String courses;
+    private final String subject;
+    private final int courses;
+    private Drawable cover = null;
 
     public String getSubject() {
         return subject;
     }
 
-    public String getCourses() {
+    public int getCourses() {
         return courses;
     }
 
-    public Category(String subject, String courses) {
+    public Drawable getCover() {
+        return cover;
+    }
+
+    public void setCover(Drawable drawable) {
+        cover = drawable;
+    }
+
+    public Category(String subject, int courses) {
         this.subject = subject;
         this.courses = courses;
     }

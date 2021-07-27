@@ -56,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();*/
 
         ImageView drawerIcon = findViewById(R.id.drawer_icon);
-        drawerIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawer.openDrawer(GravityCompat.START);
-            }
-        });
+        drawerIcon.setOnClickListener(v -> drawer.openDrawer(GravityCompat.START));
     }
 }
