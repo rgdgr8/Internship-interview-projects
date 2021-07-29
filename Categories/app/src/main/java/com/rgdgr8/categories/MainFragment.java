@@ -1,5 +1,6 @@
 package com.rgdgr8.categories;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -129,6 +131,9 @@ public class MainFragment extends Fragment {
             if (category.getCover() != null) {
                 Log.d(TAG, "bind: " + category.getCover());
                 backgroundImage.setImageDrawable(category.getCover());
+            }else{
+                Drawable d = ResourcesCompat.getDrawable(getActivity().getResources(),R.drawable.default_item_background,null);
+                backgroundImage.setImageDrawable(d);
             }
         }
     }
