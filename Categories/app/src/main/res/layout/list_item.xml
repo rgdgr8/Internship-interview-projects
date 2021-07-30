@@ -42,6 +42,7 @@
             android:fontFamily="sans-serif-light"
             android:textColor="@color/darker_gray"
             android:text="courses"
+            android:textStyle="bold"
             android:textSize="12sp"
             android:background="@android:color/transparent"/>
     </LinearLayout>
