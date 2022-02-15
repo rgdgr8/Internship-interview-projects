@@ -39,6 +39,7 @@ public class MainFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         adapter = new MainAdapter(Categories.getInstance(getActivity()).getCategoriesList());
         recyclerView.setAdapter(adapter);
+        //recyclerView.setNestedScrollingEnabled(false);
         recyclerView.addOnScrollListener(new MyScrollListener(greetingLayout));
 
         return view;
