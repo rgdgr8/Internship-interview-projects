@@ -1,3 +1,6 @@
 [submodule "Regional-Countries"]
 	path = Regional-Countries
 	url = https://github.com/rgdgr8/Regional-Countries.git
+[submodule "Server-Client-Cryptography"]
+	path = Server-Client-Cryptography
+	url = https://github.com/rgdgr8/Server-Client-Cryptography.git
